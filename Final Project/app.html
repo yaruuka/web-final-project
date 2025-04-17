@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meme Caption Generator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .meme-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    #caption {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #0077cc;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="meme-box">
+    <h1>😂 Meme Caption Generator</h1>
+    <img id="memeImage" src="https://i.imgflip.com/30b1gx.jpg" alt="Meme" width="400">
+    <p id="caption">When you open VS Code and pretend to know what you're doing</p>
+    <button onclick="generateMeme()">Generate Another</button>
+  </div>
+
+  <script>
+    const memes = [
+      "https://i.imgflip.com/30b1gx.jpg",
+      "https://i.imgflip.com/1bij.jpg",
+      "https://i.imgflip.com/26am.jpg",
+      "https://i.imgflip.com/4t0m5.jpg",
+      "https://i.imgflip.com/3si4.jpg"
+    ];
+
+    const captions = [
+      "When the code finally works and you don't know why",
+      "Me pretending I’m not about to fail this final",
+      "When your brain loads slower than the WiFi",
+      "When you guess on every multiple choice and still pass",
+      "POV: You open the group project and realize it’s all you"
+    ];
+
+    function generateMeme() {
+      const randomImg = memes[Math.floor(Math.random() * memes.length)];
+      const randomCaption = captions[Math.floor(Math.random() * captions.length)];
+
+      document.getElementById("memeImage").src = randomImg;
+      document.getElementById("caption").textContent = randomCaption;
+    }
+  </script>
+
+</body>
+</html>
